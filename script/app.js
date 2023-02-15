@@ -30,8 +30,6 @@ document.getElementById('calculator-body').addEventListener('click', function (e
     const machFiled=document.getElementById('machFiled');
     const previousMachFiled=machFiled.value;
 
-
-
     // const number=event.target.innerText;
     
     if (isNaN(calculator)) {
@@ -47,5 +45,17 @@ document.getElementById('calculator-body').addEventListener('click', function (e
     }else{
         machFiled.value=previousMachFiled + calculator;
     }
-    
+})
+document.getElementById('submit-btn').addEventListener('click', function () {
+    const displayFiled=document.getElementById('pin-input-filed');
+    const dialFiled =document.getElementById('machFiled');
+    const submitSuccess=document.getElementById('submit-success');
+    const submitWrong=document.getElementById('submit-wrong')
+    if (displayFiled.value == dialFiled.value) {
+        submitSuccess.style.display='block';
+        submitWrong.style.display='none';
+    }else{
+        submitSuccess.style.display='none';
+        submitWrong.style.display='block';
+    }
 })
